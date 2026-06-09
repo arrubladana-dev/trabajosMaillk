@@ -11,4 +11,7 @@ public class ResponseResultCoachingDTO {
 
     private Integer passes;
     
+    private Long idPlayer;
+
+    private Long idCoaching;
 }
