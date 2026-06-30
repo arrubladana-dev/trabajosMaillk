@@ -127,7 +127,7 @@ public class TaskSevice {
 
         Task taskFount = task.get();
         if (taskFount.getState()==StateTask.CANCELADA||(taskFount.getState()==StateTask.COMPLETADA)) {
-            response.setMessage("las tareas cancelasdas o completadas no se puden mover sopenco");
+            response.setMessage("las tareas cancelasdas o completadas no se puden mover");
             response.setSuccess(false);
             return response;
         }
@@ -163,7 +163,7 @@ public class TaskSevice {
         }
         Task taskFount = task.get();
         if (taskFount.getState()==StateTask.CANCELADA||(taskFount.getState()==StateTask.COMPLETADA)) {
-            response.setMessage("las tareas cancelasdas o completadas no se puden mover sopenco");
+            response.setMessage("las tareas cancelasdas o completadas no se puden mover ");
             response.setSuccess(false);
             return response;
         }
