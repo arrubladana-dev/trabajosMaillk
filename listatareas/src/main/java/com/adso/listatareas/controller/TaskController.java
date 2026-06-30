@@ -36,7 +36,7 @@ public class TaskController {
     
     private final TaskSevice taskSevice;
 
-    @GetMapping("/tareas")
+    @GetMapping("/task")
     public ResponseEntity<HttpGolbalResponseDTO<List<TaskResponseDTO>>> listTask() {
         try {
             HttpGolbalResponseDTO<List<TaskResponseDTO>> reponse = taskSevice.listTask();
@@ -47,7 +47,7 @@ public class TaskController {
         }
     }
     
-    @GetMapping("tareas/{id}")
+    @GetMapping("tasks/{id}")
     public ResponseEntity<HttpGolbalResponseDTO<TaskResponseDTO>> getTask(@PathVariable Long id) {
         try {
             HttpGolbalResponseDTO<TaskResponseDTO> reponse = taskSevice.getTask(id);
