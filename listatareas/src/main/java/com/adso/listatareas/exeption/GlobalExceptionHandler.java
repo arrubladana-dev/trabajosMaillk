@@ -2,9 +2,10 @@ package com.adso.listatareas.exeption;
 
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.adso.listatareas.dto.HttpGolbalResponseDTO;
-
+@RestControllerAdvice
 public class GlobalExceptionHandler {
         @ExceptionHandler(MethodArgumentNotValidException.class)
     public HttpGolbalResponseDTO<Object> handleValidation(MethodArgumentNotValidException ex){
