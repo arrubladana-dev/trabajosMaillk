@@ -1,0 +1,740 @@
+{
+  "info": {
+    "_postman_id": "392bedfa-c2ea-480a-85b5-48bd72d14e94",
+    "name": "TiendaApp",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54518905",
+    "_collection_link": "https://go.postman.co/collection/54518905-392bedfa-c2ea-480a-85b5-48bd72d14e94?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "register cliente",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"user\": \"clarita\",\r\n\r\n    \"password\": \"12345678\"\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9090/api/v1/tienda/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "v1",
+            "tienda",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "users/me",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "users",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{json_web_token_12co}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/api/v1/tienda/users/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "v1",
+            "tienda",
+            "users",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "crear userAdmin",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{json_web_token_0kie}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"userName\": \"Pepita\",\r\n\r\n    \"email\": \"pepita@gmail.com\",\r\n\r\n    \"password\": \"12345678\",\r\n\r\n    \"rol\": 3,\r\n\r\n    \"active\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9090/api/v1/tienda/users/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "v1",
+            "tienda",
+            "users",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "change Rol",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{json_web_token_0wvi}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"idRol\": 6\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9090/api/v1/tienda/users/2/role",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "v1",
+            "tienda",
+            "users",
+            "2",
+            "role"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "change Status",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{json_web_token_12gm}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"status\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9090/api/v1/tienda/users/2/status",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "v1",
+            "tienda",
+            "users",
+            "2",
+            "status"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create categories",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{json_web_token_0egj}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Carne\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9090/api/v1/tienda/categories/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "v1",
+            "tienda",
+            "categories",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "list categories",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{json_web_token_17by}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/api/v1/tienda/categories/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "v1",
+            "tienda",
+            "categories",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "delete catgegories",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{json_web_token_0ztr}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/api/v1/tienda/categories/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "v1",
+            "tienda",
+            "categories",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "List products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/api/v1/tienda/products",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "v1",
+            "tienda",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create product",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{json_web_token_06lg}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"name\": \"Computador plus\",\r\n\r\n    \"description\": \"El mejor que te vas a encontrar\",\r\n\r\n    \"price\": 12000,\r\n\r\n    \"stock\": 30,\r\n\r\n    \"idCategory\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9090/api/v1/tienda/products/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "v1",
+            "tienda",
+            "products",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "list seller products",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjMsInJvbElkIjozLCJzdWIiOiJQZXBpdGEiLCJpYXQiOjE3OTM3NDYyOTksImV4cCI6MTc5Mzc0Njg5OX0.9OmaNbFzqMbjFNrNumOiv6nyDXvhtBLisZ1ZW0VTpMA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/api/v1/tienda/products/mine",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "v1",
+            "tienda",
+            "products",
+            "mine"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "edit product",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{json_web_token_0uct}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"name\": \"Computador super duper\",\r\n\r\n    \"description\": \"El mejor que te vas a encontrar super mejor\",\r\n\r\n    \"price\": 12000000,\r\n\r\n    \"stock\": 60,\r\n\r\n    \"idCategory\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9090/api/v1/tienda/products/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "v1",
+            "tienda",
+            "products",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "delete product",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{json_web_token_0799}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/api/v1/tienda/products/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "v1",
+            "tienda",
+            "products",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "crete order",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjQsInJvbElkIjoyLCJzdWIiOiJsYXVyYSIsImlhdCI6MTc5MzkwODMyMywiZXhwIjoxNzkzOTA4OTIzfQ.2Dw63DDM3tiBTa3q94JPIcmxZ00uQbz_tBwt7-fO8qI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"idProduct\": 2,\r\n\r\n    \"quantity\": 10\r\n}\r\n\r\n    ",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9090/api/v1/tienda/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "v1",
+            "tienda",
+            "orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Order mine",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjQsInJvbElkIjoyLCJzdWIiOiJsYXVyYSIsImlhdCI6MTc5MzkwODI0MiwiZXhwIjoxNzkzOTA4ODQyfQ.xZAqFjdxyMwFwWHNukZCjzbH5zPHUM-dml6rqGElsAQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/api/v1/tienda/orders/mine",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "v1",
+            "tienda",
+            "orders",
+            "mine"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Orders Sales",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjMsInJvbElkIjozLCJzdWIiOiJQZXBpdGEiLCJpYXQiOjE3OTM5MTg2OTUsImV4cCI6MTc5MzkxOTI5NX0.pXNsgk0M6hruw2mjBbgykkZwLpyqjvCunByiVIBQBfo",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/api/v1/tienda/orders/sales",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "v1",
+            "tienda",
+            "orders",
+            "sales"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Orderd Admin",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsInJvbElkIjoxLCJzdWIiOiJwZWRybyIsImlhdCI6MTc5MzkxOTAzMywiZXhwIjoxNzkzOTE5NjMzfQ.7TG8e4OOJNwb_c9xNl_Krp2iANiKnz1u9rQXdZya36U",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/api/v1/tienda/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "v1",
+            "tienda",
+            "orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "change status order",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsInJvbElkIjoxLCJzdWIiOiJwZWRybyIsImlhdCI6MTc5MzkyMTYxMiwiZXhwIjoxNzkzOTIyMjEyfQ.PpbSRV6DgRQ9wnikLyzlVPYxZDKTcZRjpDoe72zhcy0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"status\": \"ENVIADO\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9090/api/v1/tienda/orders/1/status",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "v1",
+            "tienda",
+            "orders",
+            "1",
+            "status"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "cancel order",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjQsInJvbElkIjoyLCJzdWIiOiJsYXVyYSIsImlhdCI6MTc5MzkyMjAxOSwiZXhwIjoxNzkzOTIyNjE5fQ.GK_4UdZNPFu819EPAFoK_rMrC_r8zOU7U6r9UPkV9uA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/api/v1/tienda/orders/2/cancel",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "v1",
+            "tienda",
+            "orders",
+            "2",
+            "cancel"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "json_web_token_0799",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0uct",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_06lg",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_12co",
+      "secret": true
+    }
+  ]
+}
