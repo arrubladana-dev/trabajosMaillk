@@ -19,6 +19,7 @@ import com.adso.tienda.enums.RoleEnum;
 import com.adso.tienda.security.RequiresRole;
 import com.adso.tienda.service.OrdersService;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -35,7 +36,7 @@ public class OrdesController {
 
     @PostMapping ("")
     @RequiresRole ({RoleEnum.CLIENTE})
-    public ResponseEntity<HttpGlobalresponseDTO<OrdesResponseDTO>> creadOrder(@RequestAttribute("userId") Long userId, @RequestBody OrderRequesCreadDTO request){
+    public ResponseEntity<HttpGlobalresponseDTO<OrdesResponseDTO>> creadOrder(@RequestAttribute("userId") Long userId, @Valid  @RequestBody OrderRequesCreadDTO request){
         HttpGlobalresponseDTO<OrdesResponseDTO> response = ordersService.creadOrder(userId, request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }

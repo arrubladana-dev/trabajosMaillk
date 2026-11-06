@@ -29,7 +29,7 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("register")
-    public ResponseEntity<HttpGlobalresponseDTO<UserDTO>> register(@RequestBody RegisterRequestDTO registerRequestDTO) {
+    public ResponseEntity<HttpGlobalresponseDTO<UserDTO>> register(@Valid @RequestBody RegisterRequestDTO registerRequestDTO) {
         try {
             HttpGlobalresponseDTO<UserDTO> response = authService.register(registerRequestDTO);
             return ResponseEntity.status(HttpStatus.CREATED).body(response);

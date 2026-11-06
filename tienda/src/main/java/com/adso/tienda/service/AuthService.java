@@ -38,12 +38,13 @@ public class AuthService {
         
         if(userFound.isPresent()){
             response.setMessage("El nombre del usuario ya se encuentra en uso buscate otro");
-            
+            response.setSuccess(false);
             return response;
         }
 
         if (emailFpund.isPresent()) {
             response.setMessage("el correo ya se encuentra en uso");
+            response.setSuccess(false);
             return response;
         }
         
